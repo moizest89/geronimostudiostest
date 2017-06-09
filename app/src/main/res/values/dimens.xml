@@ -1,3 +1,8 @@
 <resources>
     <dimen name="fab_margin">16dp</dimen>
+
+    <dimen name="main_list_title">25sp</dimen>
+    <dimen name="main_list_category">15sp</dimen>
+    <dimen name="main_list_text_padding">10sp</dimen>
+
 </resources>

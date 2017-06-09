@@ -27,5 +27,10 @@ dependencies {
 
     compile "com.android.support:appcompat-v7:$rootProject.ext.SUPPORT_LIBRARY_VERSION"
     compile "com.android.support:design:$rootProject.ext.SUPPORT_LIBRARY_VERSION"
+    compile "com.android.support:cardview-v7:$rootProject.ext.SUPPORT_LIBRARY_VERSION"
+    compile "com.squareup.picasso:picasso:$rootProject.ext.SQUARE_PICASSO"
+    compile "com.jakewharton:butterknife:$rootProject.ext.JAKE_BUTTERKNIFE"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.ext.JAKE_BUTTERKNIFE"
+
     testCompile 'junit:junit:4.12'
 }

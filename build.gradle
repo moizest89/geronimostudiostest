@@ -24,4 +24,6 @@ task clean(type: Delete) {
 
 ext{
     SUPPORT_LIBRARY_VERSION = '25.3.1'
+    SQUARE_PICASSO = '2.5.2'
+    JAKE_BUTTERKNIFE = '8.6.0'
 }
