@@ -11,9 +11,12 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.util.List;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import moizest89.geronimostudios.test.R;
+import moizest89.geronimostudios.test.data.models.Article;
 import moizest89.geronimostudios.test.util.OnItemClickListener;
 
 public class MainActivity extends AppCompatActivity implements IMainView,OnItemClickListener {
@@ -54,6 +57,7 @@ public class MainActivity extends AppCompatActivity implements IMainView,OnItemC
 
         this.mPresenter = new MainPresenter(this);
         this.mPresenter.attachView(this);
+        this.mPresenter.getData();
 
 
 
@@ -98,5 +102,10 @@ public class MainActivity extends AppCompatActivity implements IMainView,OnItemC
     @Override
     public void onItemClickListener(View view, int position) {
 
+    }
+
+    @Override
+    public void setMainData(List<Article> data) {
+        this.mAdapter.setData(data);
     }
 }

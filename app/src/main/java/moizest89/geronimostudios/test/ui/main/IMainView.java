@@ -1,5 +1,8 @@
 package moizest89.geronimostudios.test.ui.main;
 
+import java.util.List;
+
+import moizest89.geronimostudios.test.data.models.Article;
 import moizest89.geronimostudios.test.ui.base.MvpView;
 
 /**
@@ -7,4 +10,6 @@ import moizest89.geronimostudios.test.ui.base.MvpView;
  */
 
 public interface IMainView extends MvpView{
+
+    void setMainData(List<Article> data);
 }

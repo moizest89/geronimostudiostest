@@ -8,9 +8,13 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import moizest89.geronimostudios.test.R;
+import moizest89.geronimostudios.test.data.models.Article;
 import moizest89.geronimostudios.test.util.OnItemClickListener;
 
 /**
@@ -22,6 +26,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.Holder>{
 
     private Context context;
     private OnItemClickListener onItemClickListener;
+    private List<Article> data = new ArrayList<>();
 
     public MainAdapter(Context context) {
         this.context = context;
@@ -43,7 +48,13 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.Holder>{
 
     @Override
     public int getItemCount() {
-        return 5;
+        return this.data.size();
+    }
+
+
+    public void setData(List<Article> mData){
+        this.data = mData;
+        this.notifyDataSetChanged();
     }
 
 
