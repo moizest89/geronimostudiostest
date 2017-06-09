@@ -19,7 +19,7 @@ import moizest89.geronimostudios.test.R;
 import moizest89.geronimostudios.test.data.models.Article;
 import moizest89.geronimostudios.test.util.OnItemClickListener;
 
-public class MainActivity extends AppCompatActivity implements IMainView,OnItemClickListener {
+                    public class MainActivity extends AppCompatActivity implements IMainView,OnItemClickListener {
 
 
     //Views injections
@@ -78,7 +78,8 @@ public class MainActivity extends AppCompatActivity implements IMainView,OnItemC
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_add_item, menu);
+        getMenuInflater().inflate(R.menu.menu_remove_item, menu);
         return true;
     }
 
@@ -90,7 +91,11 @@ public class MainActivity extends AppCompatActivity implements IMainView,OnItemC
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.menu_add_item) {
+            mPresenter.addRandomArticle();
+            return true;
+        }else if(id == R.id.menu_remove_item){
+            mAdapter.removeItemToList();
             return true;
         }
 
@@ -107,5 +112,11 @@ public class MainActivity extends AppCompatActivity implements IMainView,OnItemC
     @Override
     public void setMainData(List<Article> data) {
         this.mAdapter.setData(data);
+    }
+
+    @Override
+    public void setRandomArticle(Article article) {
+        this.mAdapter.addItemToList(article);
+        this.recycler_view.scrollToPosition(0);
     }
 }

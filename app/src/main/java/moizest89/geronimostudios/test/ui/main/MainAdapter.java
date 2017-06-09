@@ -74,6 +74,17 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.Holder>{
     }
 
 
+    public void addItemToList(Article article){
+        this.data.add(0,article);
+        this.notifyItemInserted(0);
+
+    }
+    
+    public void removeItemToList(){
+        this.data.remove(0);
+        this.notifyItemRemoved(0);
+    }
+
     //Public method to set OnClickListener ability via Interface
     public void setOnItemClickListener(OnItemClickListener clickListener){
         this.onItemClickListener = clickListener;

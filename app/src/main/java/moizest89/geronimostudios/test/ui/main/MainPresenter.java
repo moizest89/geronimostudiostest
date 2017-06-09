@@ -21,18 +21,23 @@ public class MainPresenter extends BasePresenter<IMainView>{
     public MainPresenter(Context context) {
         this.context = context;
 
-        setDummyData();
+        mData = setDummyData();
 
     }
 
-    private void setDummyData(){
+    private List<Article> setDummyData(){
 
-        mData.add(new Article("Funny cats",this.context.getResources().getString(R.string.description_item),"cats","http://lorempixel.com/640/400/cats/1"));
-        mData.add(new Article("Cats Love",this.context.getResources().getString(R.string.description_item),"cats","http://lorempixel.com/640/400/cats/10"));
-        mData.add(new Article("Cats cats everywhere",this.context.getResources().getString(R.string.description_item),"love","http://lorempixel.com/640/400/cats/3"));
-        mData.add(new Article("Hate cats? why?",this.context.getResources().getString(R.string.description_item),"cats","http://lorempixel.com/640/400/cats/4"));
-        mData.add(new Article("Meowwww",this.context.getResources().getString(R.string.description_item),"cats","http://lorempixel.com/640/400/cats/5"));
-        mData.add(new Article("True love with cats",this.context.getResources().getString(R.string.description_item),"love","http://lorempixel.com/640/400/cats/6"));
+        List<Article> data = new ArrayList<>();
+
+        data.add(new Article("Funny cats",this.context.getResources().getString(R.string.description_item),"cats","http://lorempixel.com/640/400/cats/1"));
+        data.add(new Article("Cats Love",this.context.getResources().getString(R.string.description_item),"cats","http://lorempixel.com/640/400/cats/10"));
+        data.add(new Article("Cats cats everywhere",this.context.getResources().getString(R.string.description_item),"love","http://lorempixel.com/640/400/cats/3"));
+        data.add(new Article("Hate cats? why?",this.context.getResources().getString(R.string.description_item),"cats","http://lorempixel.com/640/400/cats/4"));
+        data.add(new Article("Meowwww",this.context.getResources().getString(R.string.description_item),"cats","http://lorempixel.com/640/400/cats/5"));
+        data.add(new Article("True love with cats",this.context.getResources().getString(R.string.description_item),"love","http://lorempixel.com/640/400/cats/6"));
+
+        return data;
+
     }
 
 
@@ -41,8 +46,11 @@ public class MainPresenter extends BasePresenter<IMainView>{
     }
 
 
-    public Article getRandomeArticle(){
-        return this.mData.get(0);
+    public void addRandomArticle(){
+
+        Article article = this.mData.get(3);
+
+        getMvpView().setRandomArticle(article);
     }
 
 }

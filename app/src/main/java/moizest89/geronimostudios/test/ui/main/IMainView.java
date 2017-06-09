@@ -12,4 +12,5 @@ import moizest89.geronimostudios.test.ui.base.MvpView;
 public interface IMainView extends MvpView{
 
     void setMainData(List<Article> data);
+    void setRandomArticle(Article article);
 }
