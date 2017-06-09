@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,6 +18,7 @@ import butterknife.ButterKnife;
 import moizest89.geronimostudios.test.R;
 import moizest89.geronimostudios.test.data.models.Article;
 import moizest89.geronimostudios.test.util.OnItemClickListener;
+import moizest89.geronimostudios.test.util.PabloPicasso;
 
 /**
  * Created by moizest89 on 6/9/17.
@@ -43,6 +46,19 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.Holder>{
 
     @Override
     public void onBindViewHolder(Holder holder, int position) {
+
+        Article article = this.data.get(position);
+
+        holder.item_title.setText(article.getName());
+        holder.item_category.setText(article.getCategory());
+
+
+        //Create singleton for avoid memory leaks
+        Picasso picasso = PabloPicasso.with(this.context);
+        picasso.load(article.getBanner())
+                .placeholder(R.drawable.place_holder_rectangular)
+                .error(R.drawable.place_holder_rectangular)
+                .into(holder.item_banner);
 
     }
 

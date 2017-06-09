@@ -27,12 +27,12 @@ public class MainPresenter extends BasePresenter<IMainView>{
 
     private void setDummyData(){
 
-        mData.add(new Article("Funny cats",this.context.getResources().getString(R.string.description_item),"cats","http://lorempixel.com/640/400/cats/"));
-        mData.add(new Article("Cats Love",this.context.getResources().getString(R.string.description_item),"cats","http://lorempixel.com/640/400/cats/"));
-        mData.add(new Article("Cats cats everywhere",this.context.getResources().getString(R.string.description_item),"love","http://lorempixel.com/640/400/cats/"));
-        mData.add(new Article("Hate cats? why?",this.context.getResources().getString(R.string.description_item),"cats","http://lorempixel.com/640/400/cats/"));
-        mData.add(new Article("Meowwww",this.context.getResources().getString(R.string.description_item),"cats","http://lorempixel.com/640/400/cats/"));
-        mData.add(new Article("True love with cats",this.context.getResources().getString(R.string.description_item),"love","http://lorempixel.com/640/400/cats/"));
+        mData.add(new Article("Funny cats",this.context.getResources().getString(R.string.description_item),"cats","http://lorempixel.com/640/400/cats/1"));
+        mData.add(new Article("Cats Love",this.context.getResources().getString(R.string.description_item),"cats","http://lorempixel.com/640/400/cats/10"));
+        mData.add(new Article("Cats cats everywhere",this.context.getResources().getString(R.string.description_item),"love","http://lorempixel.com/640/400/cats/3"));
+        mData.add(new Article("Hate cats? why?",this.context.getResources().getString(R.string.description_item),"cats","http://lorempixel.com/640/400/cats/4"));
+        mData.add(new Article("Meowwww",this.context.getResources().getString(R.string.description_item),"cats","http://lorempixel.com/640/400/cats/5"));
+        mData.add(new Article("True love with cats",this.context.getResources().getString(R.string.description_item),"love","http://lorempixel.com/640/400/cats/6"));
     }
 
 
