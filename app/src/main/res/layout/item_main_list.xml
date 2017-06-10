@@ -9,6 +9,8 @@
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/main_list_margin_item"
+        android:layout_marginRight="@dimen/main_list_margin_item"
         card_view:cardBackgroundColor="#FFFFFF"
         card_view:cardCornerRadius="2dp"
         card_view:cardElevation="4dp"
@@ -42,7 +44,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/item_category"
                 fontPath="fonts/NotoSansUI-Regular.ttf"
-                android:padding="@dimen/main_list_text_padding"
+                android:paddingLeft="@dimen/main_list_text_padding"
                 android:textSize="@dimen/main_list_category"
                 tool:text="Category"/>
 
@@ -67,16 +69,8 @@
                     android:layout_height="wrap_content"
                     android:textColor="@color/colorAccent"
                     android:padding="@dimen/main_list_text_padding"
+                    android:layout_marginRight="@dimen/main_list_text_padding"
                     android:text="@string/item_button_label_details"
-                    android:clickable="true"
-                    fontPath="fonts/NotoSansUI-Regular.ttf"
-                    android:foreground="?android:attr/selectableItemBackground"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="@dimen/main_list_text_padding"
-                    android:text="@string/item_button_label_share"
                     android:clickable="true"
                     fontPath="fonts/NotoSansUI-Regular.ttf"
                     android:foreground="?android:attr/selectableItemBackground"/>
