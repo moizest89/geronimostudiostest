@@ -1,5 +1,6 @@
 package moizest89.geronimostudios.test.ui.main.list;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -29,6 +30,7 @@ import moizest89.geronimostudios.test.util.ClickListener;
 import moizest89.geronimostudios.test.util.OnItemClickListener;
 import moizest89.geronimostudios.test.util.RecyclerTouchListener;
 import moizest89.geronimostudios.test.util.Utility;
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class MainActivity extends AppCompatActivity implements IMainView, MainAdapter.AdapterDataVerify {
 
@@ -108,6 +110,8 @@ public class MainActivity extends AppCompatActivity implements IMainView, MainAd
         return true;
     }
 
+
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -127,6 +131,10 @@ public class MainActivity extends AppCompatActivity implements IMainView, MainAd
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
+    }
 
     @Override
     public void setMainData(List<Article> data) {

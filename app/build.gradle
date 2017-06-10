@@ -33,6 +33,8 @@ dependencies {
     annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.ext.JAKE_BUTTERKNIFE"
     compile "com.jakewharton.picasso:picasso2-okhttp3-downloader:$rootProject.ext.JAKE_PICASSO_DOWNLOADER"
 
-    compile 'com.android.support.constraint:constraint-layout:1.0.1'
+    compile "uk.co.chrisjenx:calligraphy:$rootProject.ext.CALLIGRAPHY"
+
+
     testCompile 'junit:junit:4.12'
 }

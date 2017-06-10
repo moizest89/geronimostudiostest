@@ -32,6 +32,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/item_title"
+                fontPath="fonts/NotoSans-Bold.ttf"
                 android:padding="@dimen/main_list_text_padding"
                 android:textSize="@dimen/main_list_title"
                 tool:text="Title"/>
@@ -40,6 +41,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/item_category"
+                fontPath="fonts/NotoSansUI-Regular.ttf"
                 android:padding="@dimen/main_list_text_padding"
                 android:textSize="@dimen/main_list_category"
                 tool:text="Category"/>
@@ -67,6 +69,7 @@
                     android:padding="@dimen/main_list_text_padding"
                     android:text="@string/item_button_label_details"
                     android:clickable="true"
+                    fontPath="fonts/NotoSansUI-Regular.ttf"
                     android:foreground="?android:attr/selectableItemBackground"/>
 
                 <TextView
@@ -75,6 +78,7 @@
                     android:padding="@dimen/main_list_text_padding"
                     android:text="@string/item_button_label_share"
                     android:clickable="true"
+                    fontPath="fonts/NotoSansUI-Regular.ttf"
                     android:foreground="?android:attr/selectableItemBackground"/>
             </LinearLayout>
 

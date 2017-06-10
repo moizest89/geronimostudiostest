@@ -1,5 +1,6 @@
 package moizest89.geronimostudios.test.ui.main.details;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -18,6 +19,7 @@ import moizest89.geronimostudios.test.R;
 import moizest89.geronimostudios.test.data.models.Article;
 import moizest89.geronimostudios.test.util.PabloPicasso;
 import moizest89.geronimostudios.test.util.Utility;
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class ArticleDetailsActivity extends AppCompatActivity {
 
@@ -71,12 +73,16 @@ public class ArticleDetailsActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
+    }
+
     public void setActionBar(){
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
-//        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_arrow_back_white_24dp);
-//        this.toolbar.setTitle(null);
+        this.toolbar.setTitle(this.article.getName());
         getSupportActionBar().setTitle(this.article.getName());
         this.toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
