@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.util.SortedList;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -118,8 +119,8 @@ public class MainActivity extends AppCompatActivity implements IMainView,OnItemC
 
     @Override
     public void setRandomArticle(Article article) {
-//        this.mAdapter.addItemToList(article);
-//        this.recycler_view.scrollToPosition(0);
+        this.mAdapter.addItemToList(article);
+        this.recycler_view.scrollToPosition(0);
         Log.e(TAG, "setRandomArticle");
     }
 }

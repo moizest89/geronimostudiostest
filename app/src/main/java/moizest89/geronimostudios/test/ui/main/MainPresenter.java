@@ -1,9 +1,11 @@
 package moizest89.geronimostudios.test.ui.main;
 
 import android.content.Context;
+import android.support.v7.util.SortedList;
 import android.util.Log;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import moizest89.geronimostudios.test.R;
@@ -22,7 +24,6 @@ public class MainPresenter extends BasePresenter<IMainView>{
 
     public MainPresenter(Context context) {
         this.context = context;
-
     }
 
     private void setDummyData(){
@@ -41,12 +42,15 @@ public class MainPresenter extends BasePresenter<IMainView>{
 
     public void getData(){
         setDummyData();
-        getMvpView().setMainData(this.mData);
+
+        List<Article> articleList = new ArrayList<>(this.mData);
+
+        getMvpView().setMainData(articleList);
     }
 
 
     public void addRandomArticle(){
-        Log.e(TAG, "mData: "+mData);
+//        Log.e(TAG, "mData: "+mData.size());
         getMvpView().setRandomArticle(this.mData.get(1));
     }
 

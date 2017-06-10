@@ -1,5 +1,7 @@
 package moizest89.geronimostudios.test.ui.main;
 
+import android.support.v7.util.SortedList;
+
 import java.util.List;
 
 import moizest89.geronimostudios.test.data.models.Article;

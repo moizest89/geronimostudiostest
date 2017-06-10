@@ -1,7 +1,9 @@
 package moizest89.geronimostudios.test.ui.main;
 
 import android.content.Context;
+import android.support.v7.util.SortedList;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,7 +12,6 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
@@ -29,7 +30,10 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.Holder>{
 
     private Context context;
     private OnItemClickListener onItemClickListener;
-    private List<Article> mData = new ArrayList<>();
+    private List<Article> mData;
+    private final static String TAG = MainAdapter.class.getSimpleName();
+
+
 
     public MainAdapter(Context context) {
         this.context = context;
@@ -69,6 +73,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.Holder>{
 
 
     public void setData(List<Article> data){
+
         this.mData = data;
         this.notifyDataSetChanged();
     }
