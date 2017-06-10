@@ -8,6 +8,7 @@ import android.support.v7.widget.Toolbar;
 import android.transition.Transition;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
@@ -25,7 +26,12 @@ public class ArticleDetailsActivity extends AppCompatActivity {
     Toolbar toolbar;
     @BindView(R.id.article_banner)
     ImageView article_banner;
-
+    @BindView(R.id.title)
+    TextView title;
+    @BindView(R.id.category)
+    TextView category;
+    @BindView(R.id.description)
+    TextView description;
 
 
     private Article article;
@@ -55,7 +61,9 @@ public class ArticleDetailsActivity extends AppCompatActivity {
                     .error(R.drawable.place_holder_rectangular)
                     .into(article_banner);
 
-
+            this.title.setText(this.article.getName());
+            this.category.setText(this.article.getCategory());
+            this.description.setText(this.article.getDescription());
 
             setActionBar();
 

@@ -24,14 +24,37 @@
             card_view:cardUseCompatPadding="true"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            app:contentPadding="20dp"
+            app:contentPadding="5dp"
             card_view:cardPreventCornerOverlap="false"
             >
 
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="klmadklmadskladsklmadsklmadslkm"/>
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/title"
+                    android:gravity="center"
+                    android:padding="@dimen/details_text_padding"
+                    android:textSize="@dimen/main_list_title" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#DFDFDF"
+                    android:layout_margin="10dp"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/category"
+                    android:gravity="center"
+                    android:padding="@dimen/details_text_padding"
+                    android:textSize="@dimen/main_list_category" />
+            </LinearLayout>
 
         </android.support.v7.widget.CardView>
 
@@ -52,7 +75,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/large_text"/>
+                android:id="@+id/description"/>
 
         </android.support.v7.widget.CardView>
 
