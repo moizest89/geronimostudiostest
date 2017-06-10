@@ -39,6 +39,10 @@
                 app:layout_collapseMode="parallax"
                 android:src="@drawable/place_holder_rectangular" />
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#28000000"/>
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
