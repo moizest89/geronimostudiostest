@@ -45,12 +45,12 @@ public class MainPresenter extends BasePresenter<IMainView>{
 
         List<Article> articleList = new ArrayList<>(this.mData);
 
+
         getMvpView().setMainData(articleList);
     }
 
 
     public void addRandomArticle(){
-//        Log.e(TAG, "mData: "+mData.size());
         getMvpView().setRandomArticle(this.mData.get(1));
     }
 

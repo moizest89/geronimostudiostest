@@ -12,6 +12,8 @@ import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -21,7 +23,7 @@ import moizest89.geronimostudios.test.R;
 import moizest89.geronimostudios.test.data.models.Article;
 import moizest89.geronimostudios.test.util.OnItemClickListener;
 
-public class MainActivity extends AppCompatActivity implements IMainView,OnItemClickListener {
+public class MainActivity extends AppCompatActivity implements IMainView,OnItemClickListener, MainAdapter.AdapterDataVerify {
 
 
     //Views injections
@@ -29,6 +31,8 @@ public class MainActivity extends AppCompatActivity implements IMainView,OnItemC
     RecyclerView recycler_view;
     @BindView(R.id.toolbar)
     Toolbar toolbar;
+    @BindView(R.id.text_message)
+    TextView text_message;
 
     @BindView(R.id.fab)
     FloatingActionButton fab;
@@ -49,7 +53,9 @@ public class MainActivity extends AppCompatActivity implements IMainView,OnItemC
 
         setActionBar();
 
-        this.mAdapter = new MainAdapter(this);
+
+        //Adapter receives context and interface to verify when data is empty
+        this.mAdapter = new MainAdapter(this,this);
 
         //Create a interface called OnItemClickListener to implement ability into RecyclerView
         this.mAdapter.setOnItemClickListener(this);
@@ -106,7 +112,7 @@ public class MainActivity extends AppCompatActivity implements IMainView,OnItemC
     }
 
 
-    //Interface callback
+    //View callbacks
     @Override
     public void onItemClickListener(View view, int position) {
 
@@ -121,6 +127,36 @@ public class MainActivity extends AppCompatActivity implements IMainView,OnItemC
     public void setRandomArticle(Article article) {
         this.mAdapter.addItemToList(article);
         this.recycler_view.scrollToPosition(0);
-        Log.e(TAG, "setRandomArticle");
+
+
+
+    }
+
+    //RecyclerView callbacks methods
+
+    @Override
+    public void recyclerIsEmpty(boolean status) {
+
+        Log.e(TAG, "status: "+status);
+
+        if(status){
+            this.text_message.setVisibility(View.VISIBLE);
+        }else{
+            this.text_message.setVisibility(View.INVISIBLE);
+        }
+    }
+
+    @Override
+    public void itemAddedSuccesfully(boolean status) {
+        showSimpleMessage(R.string.message_item_added);
+    }
+
+    @Override
+    public void itemDeletedSuccesfully(boolean status) {
+        showSimpleMessage(R.string.message_item_deleted);
+    }
+
+    private void showSimpleMessage(int message){
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 }

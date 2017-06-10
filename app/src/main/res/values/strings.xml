@@ -9,4 +9,8 @@
     <string name="menu_label_add_item">Add Item</string>
     <string name="menu_label_remove_item">Remove Item</string>
 
+    <string name="message_item_added">Item added successfully</string>
+    <string name="message_item_deleted">Item deleted successfully</string>
+    <string name="message_no_data_to_show">No data to show</string>
+
 </resources>

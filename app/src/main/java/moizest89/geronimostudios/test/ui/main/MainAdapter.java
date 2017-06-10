@@ -30,13 +30,15 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.Holder>{
 
     private Context context;
     private OnItemClickListener onItemClickListener;
+    private AdapterDataVerify adapterDataVerify;
     private List<Article> mData;
     private final static String TAG = MainAdapter.class.getSimpleName();
 
 
 
-    public MainAdapter(Context context) {
+    public MainAdapter(Context context, AdapterDataVerify adapterDataVerify) {
         this.context = context;
+        this.adapterDataVerify =adapterDataVerify;
     }
 
     @Override
@@ -82,12 +84,26 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.Holder>{
     public void addItemToList(Article article){
         this.mData.add(0,article);
         this.notifyItemInserted(0);
-
+        this.adapterDataVerify.itemAddedSuccesfully(true);
+        isEmpty();
     }
 
     public void removeItemToList(){
-        this.mData.remove(0);
-        this.notifyItemRemoved(0);
+
+        if(this.mData.size() > 0) {
+            this.mData.remove(0);
+            this.notifyItemRemoved(0);
+            this.adapterDataVerify.itemDeletedSuccesfully(true);
+        }
+        isEmpty();
+    }
+
+
+    //Item to verify if recyclerview has data to show and call action to show a simple message into the view
+    private void isEmpty(){
+        boolean status = (this.mData.size() == 0)? true: false;
+        Log.e(TAG, "mData is empty: "+status);
+        this.adapterDataVerify.recyclerIsEmpty(status);
     }
 
     //Public method to set OnClickListener ability via Interface
@@ -119,5 +135,12 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.Holder>{
             //Set behavior into each row
             onItemClickListener.onItemClickListener(v, getAdapterPosition());
         }
+    }
+
+
+    public interface AdapterDataVerify{
+        void recyclerIsEmpty(boolean status);
+        void itemAddedSuccesfully(boolean status);
+        void itemDeletedSuccesfully(boolean status);
     }
 }
