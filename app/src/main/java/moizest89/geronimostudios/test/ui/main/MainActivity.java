@@ -153,7 +153,7 @@ public class MainActivity extends AppCompatActivity implements IMainView,OnItemC
     }
 
     private void showSimpleMessage(int message){
-        //My first option was a Snackbar but I didn't like animation 
+        //My first option was a Snackbar but I didn't like animation
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
 //        Snackbar.make(this.fab, message, Snackbar.LENGTH_SHORT).show();
     }
