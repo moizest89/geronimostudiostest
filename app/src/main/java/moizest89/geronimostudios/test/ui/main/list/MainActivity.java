@@ -1,21 +1,15 @@
 package moizest89.geronimostudios.test.ui.main.list;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.ActivityOptionsCompat;
-import android.support.v4.util.Pair;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,7 +21,6 @@ import moizest89.geronimostudios.test.R;
 import moizest89.geronimostudios.test.data.models.Article;
 import moizest89.geronimostudios.test.ui.main.details.ArticleDetailsActivity;
 import moizest89.geronimostudios.test.util.ClickListener;
-import moizest89.geronimostudios.test.util.OnItemClickListener;
 import moizest89.geronimostudios.test.util.RecyclerTouchListener;
 import moizest89.geronimostudios.test.util.Utility;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
@@ -148,16 +141,18 @@ public class MainActivity extends AppCompatActivity implements IMainView, MainAd
     }
 
     //RecyclerView callbacks methods
-
     @Override
     public void recyclerIsEmpty(boolean status) {
 
-        Log.e(TAG, "status: "+status);
+        //If the recycler view is empty, show message and desable
+        //menu icon.
 
         if(status){
             this.text_message.setVisibility(View.VISIBLE);
+            toolbar.getMenu().getItem(1).setEnabled(false);
         }else{
             this.text_message.setVisibility(View.INVISIBLE);
+            toolbar.getMenu().getItem(1).setEnabled(true);
         }
     }
 
@@ -171,6 +166,8 @@ public class MainActivity extends AppCompatActivity implements IMainView, MainAd
         showSimpleMessage(R.string.message_item_deleted);
     }
 
+
+    //Show toast message
     private void showSimpleMessage(int message){
         //My first option was a Snackbar but I didn't like animation
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
