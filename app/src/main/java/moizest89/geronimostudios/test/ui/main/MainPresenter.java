@@ -1,15 +1,10 @@
 package moizest89.geronimostudios.test.ui.main;
 
 import android.content.Context;
-import android.support.v7.util.SortedList;
 import android.util.Log;
-
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Random;
-import java.util.concurrent.ThreadLocalRandom;
-
 import moizest89.geronimostudios.test.R;
 import moizest89.geronimostudios.test.data.models.Article;
 import moizest89.geronimostudios.test.ui.base.BasePresenter;
@@ -47,14 +42,14 @@ public class MainPresenter extends BasePresenter<IMainView>{
         setDummyData();
         List<Article> articleList = new ArrayList<>(this.mData);
         getMvpView().setMainData(articleList);
-        
+
     }
 
 
     public void addRandomArticle(){
         //For get an article, I created a method to get random number
         //between 0 and data max size
-        int randomNum = randInt(0,this.mData.size());
+        int randomNum = randInt(0,(this.mData.size() - 1));
         getMvpView().setRandomArticle(this.mData.get(randomNum));
         Log.e(TAG, "randomNum: "+randomNum);
     }

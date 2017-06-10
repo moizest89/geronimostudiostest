@@ -13,4 +13,8 @@
     <string name="message_item_deleted">Item deleted successfully</string>
     <string name="message_no_data_to_show">No data to show</string>
 
+    <string name="item_button_label_share">SHARE</string>
+    <string name="item_button_label_details">DETAILS</string>
+    <string name="title_activity_splash">SplashActivity</string>
+
 </resources>

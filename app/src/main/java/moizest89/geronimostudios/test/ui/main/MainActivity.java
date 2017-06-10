@@ -49,7 +49,6 @@ public class MainActivity extends AppCompatActivity implements IMainView,OnItemC
 
         ButterKnife.bind(this);
 
-        setSupportActionBar(toolbar);
 
         setActionBar();
 
@@ -73,8 +72,7 @@ public class MainActivity extends AppCompatActivity implements IMainView,OnItemC
         this.fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                mPresenter.addRandomArticle();
             }
         });
     }
@@ -82,6 +80,7 @@ public class MainActivity extends AppCompatActivity implements IMainView,OnItemC
 
     private void setActionBar(){
         setSupportActionBar(toolbar);
+        getSupportActionBar().setIcon(R.drawable.circle_plume);
     }
 
     @Override
@@ -127,9 +126,6 @@ public class MainActivity extends AppCompatActivity implements IMainView,OnItemC
     public void setRandomArticle(Article article) {
         this.mAdapter.addItemToList(article);
         this.recycler_view.scrollToPosition(0);
-
-
-
     }
 
     //RecyclerView callbacks methods
@@ -157,6 +153,8 @@ public class MainActivity extends AppCompatActivity implements IMainView,OnItemC
     }
 
     private void showSimpleMessage(int message){
+        //My first option was a Snackbar but I didn't like animation 
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+//        Snackbar.make(this.fab, message, Snackbar.LENGTH_SHORT).show();
     }
 }
