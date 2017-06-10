@@ -7,6 +7,8 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 import moizest89.geronimostudios.test.R;
 import moizest89.geronimostudios.test.data.models.Article;
@@ -41,17 +43,25 @@ public class MainPresenter extends BasePresenter<IMainView>{
 
 
     public void getData(){
+
         setDummyData();
-
         List<Article> articleList = new ArrayList<>(this.mData);
-
-
         getMvpView().setMainData(articleList);
+        
     }
 
 
     public void addRandomArticle(){
-        getMvpView().setRandomArticle(this.mData.get(1));
+        //For get an article, I created a method to get random number
+        //between 0 and data max size
+        int randomNum = randInt(0,this.mData.size());
+        getMvpView().setRandomArticle(this.mData.get(randomNum));
+        Log.e(TAG, "randomNum: "+randomNum);
+    }
+
+    public static int randInt(int min, int max) {
+        Random rand = new Random();
+        return rand.nextInt((max - min) + 1) + min;
     }
 
 }

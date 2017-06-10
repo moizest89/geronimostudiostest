@@ -4,5 +4,6 @@
     <dimen name="main_list_title">25sp</dimen>
     <dimen name="main_list_category">15sp</dimen>
     <dimen name="main_list_text_padding">10sp</dimen>
+    <dimen name="main_simple_message_label">20sp</dimen>
 
 </resources>

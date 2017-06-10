@@ -14,6 +14,7 @@
         android:layout_gravity="center"
         android:visibility="invisible"
         android:id="@+id/text_message"
+        android:textSize="@dimen/main_simple_message_label"
         android:text="@string/message_no_data_to_show"/>
 
     <android.support.v7.widget.RecyclerView
