@@ -29,7 +29,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.Holder>{
 
     private Context context;
     private OnItemClickListener onItemClickListener;
-    private List<Article> data = new ArrayList<>();
+    private List<Article> mData = new ArrayList<>();
 
     public MainAdapter(Context context) {
         this.context = context;
@@ -47,7 +47,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.Holder>{
     @Override
     public void onBindViewHolder(Holder holder, int position) {
 
-        Article article = this.data.get(position);
+        Article article = this.mData.get(position);
 
         holder.item_title.setText(article.getName());
         holder.item_category.setText(article.getCategory());
@@ -64,24 +64,24 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.Holder>{
 
     @Override
     public int getItemCount() {
-        return this.data.size();
+        return this.mData.size();
     }
 
 
-    public void setData(List<Article> mData){
-        this.data = mData;
+    public void setData(List<Article> data){
+        this.mData = data;
         this.notifyDataSetChanged();
     }
 
 
     public void addItemToList(Article article){
-        this.data.add(0,article);
+        this.mData.add(0,article);
         this.notifyItemInserted(0);
 
     }
-    
+
     public void removeItemToList(){
-        this.data.remove(0);
+        this.mData.remove(0);
         this.notifyItemRemoved(0);
     }
 

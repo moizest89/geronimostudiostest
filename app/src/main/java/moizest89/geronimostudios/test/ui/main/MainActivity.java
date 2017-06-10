@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -19,7 +20,7 @@ import moizest89.geronimostudios.test.R;
 import moizest89.geronimostudios.test.data.models.Article;
 import moizest89.geronimostudios.test.util.OnItemClickListener;
 
-                    public class MainActivity extends AppCompatActivity implements IMainView,OnItemClickListener {
+public class MainActivity extends AppCompatActivity implements IMainView,OnItemClickListener {
 
 
     //Views injections
@@ -34,6 +35,7 @@ import moizest89.geronimostudios.test.util.OnItemClickListener;
     private MainPresenter mPresenter;
     private MainAdapter mAdapter;
 
+    private final static String TAG = MainActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -116,7 +118,8 @@ import moizest89.geronimostudios.test.util.OnItemClickListener;
 
     @Override
     public void setRandomArticle(Article article) {
-        this.mAdapter.addItemToList(article);
-        this.recycler_view.scrollToPosition(0);
+//        this.mAdapter.addItemToList(article);
+//        this.recycler_view.scrollToPosition(0);
+        Log.e(TAG, "setRandomArticle");
     }
 }
