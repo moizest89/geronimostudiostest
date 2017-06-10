@@ -1,4 +1,4 @@
-package moizest89.geronimostudios.test.ui.main;
+package moizest89.geronimostudios.test.ui.main.list;
 
 import android.support.v7.util.SortedList;
 

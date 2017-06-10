@@ -1,7 +1,6 @@
-package moizest89.geronimostudios.test.ui.main;
+package moizest89.geronimostudios.test.ui.main.list;
 
 import android.content.Context;
-import android.support.v7.util.SortedList;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -106,12 +105,11 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.Holder>{
         this.adapterDataVerify.recyclerIsEmpty(status);
     }
 
-    //Public method to set OnClickListener ability via Interface
-    public void setOnItemClickListener(OnItemClickListener clickListener){
-        this.onItemClickListener = clickListener;
+    public Article getData(int position){
+        return this.mData.get(position);
     }
 
-    public class Holder extends RecyclerView.ViewHolder implements View.OnClickListener{
+    public class Holder extends RecyclerView.ViewHolder{
 
 
         @BindView(R.id.item_banner)
@@ -126,15 +124,8 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.Holder>{
 
             ButterKnife.bind(this,itemView);
 
-            itemView.setOnClickListener(this);
-
         }
 
-        @Override
-        public void onClick(View v) {
-            //Set behavior into each row
-            onItemClickListener.onItemClickListener(v, getAdapterPosition());
-        }
     }
 
 

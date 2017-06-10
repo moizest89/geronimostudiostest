@@ -1,10 +1,12 @@
-package moizest89.geronimostudios.test.ui.main;
+package moizest89.geronimostudios.test.ui.main.list;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.ActivityOptionsCompat;
+import android.support.v4.util.Pair;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.util.SortedList;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -12,6 +14,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,9 +24,13 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import moizest89.geronimostudios.test.R;
 import moizest89.geronimostudios.test.data.models.Article;
+import moizest89.geronimostudios.test.ui.main.details.ArticleDetailsActivity;
+import moizest89.geronimostudios.test.util.ClickListener;
 import moizest89.geronimostudios.test.util.OnItemClickListener;
+import moizest89.geronimostudios.test.util.RecyclerTouchListener;
+import moizest89.geronimostudios.test.util.Utility;
 
-public class MainActivity extends AppCompatActivity implements IMainView,OnItemClickListener, MainAdapter.AdapterDataVerify {
+public class MainActivity extends AppCompatActivity implements IMainView, MainAdapter.AdapterDataVerify {
 
 
     //Views injections
@@ -57,7 +64,17 @@ public class MainActivity extends AppCompatActivity implements IMainView,OnItemC
         this.mAdapter = new MainAdapter(this,this);
 
         //Create a interface called OnItemClickListener to implement ability into RecyclerView
-        this.mAdapter.setOnItemClickListener(this);
+        this.recycler_view.addOnItemTouchListener(new RecyclerTouchListener(this, recycler_view, new ClickListener() {
+            @Override
+            public void onClick(View view, int position) {
+
+                Article article = mAdapter.getData(position);
+                Bundle bundle = new Bundle();
+                bundle.putParcelable(Utility.INTENT_DATA, article);;
+                Utility.changeActivity(MainActivity.this, ArticleDetailsActivity.class, bundle, false);
+
+            }
+        }));
 
         this.recycler_view.setLayoutManager(new LinearLayoutManager(this));
         this.recycler_view.setAdapter(this.mAdapter);
@@ -110,12 +127,6 @@ public class MainActivity extends AppCompatActivity implements IMainView,OnItemC
         return super.onOptionsItemSelected(item);
     }
 
-
-    //View callbacks
-    @Override
-    public void onItemClickListener(View view, int position) {
-
-    }
 
     @Override
     public void setMainData(List<Article> data) {

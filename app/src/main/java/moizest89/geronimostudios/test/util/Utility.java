@@ -12,6 +12,8 @@ import android.os.Bundle;
 public class Utility {
 
 
+    public final static String INTENT_DATA = "data";
+
     public static void changeActivity(Context context, Class<?> target, Bundle options, boolean finish) {
         Intent i = new Intent(context, target);
 
