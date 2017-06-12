@@ -34,6 +34,9 @@
 
     </string>
 
+    <string name="title_activity_splash">SplashActivity</string>
+    <string name="title_activity_article_details">ArticleDetailsActivity</string>
+    <string name="title_activity_zoom_image_view">ZoomImageVIewActivity</string>
 
 
 </resources>
