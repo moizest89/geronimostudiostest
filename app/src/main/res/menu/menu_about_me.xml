@@ -1,0 +1,8 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_about_me"
+        android:orderInCategory="100"
+        android:title="@string/menu_label_about_me"
+        app:showAsAction="never" />
+</menu>

@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">Geronimo</string>
-    <string name="action_settings">Settings</string>
     <string name="description_item">
         Cat ipsum dolor sit amet, vommit food and eat it again. Annoy kitten brother with poking destroy couch as revenge for my left donut is missing, as is my right but demand to be let outside at once, and expect owner to wait for me as i think about it and slap kitten brother with paw. Under the bed. Meow meow to be let out sleep on keyboard, yet meow for food, then when human fills food dish, take a few bites of food and continue meowing. Cat snacks. Meowwww cats secretly make all the worlds muffins hate dog, yet wake up wander around the house making large amounts of noise jump on top of your humans bed and fall asleep again claw drapes. Roll over and sun my belly kitty kitty has closed eyes but still sees you and caticus cuteicus. Eat grass, throw it back up jump launch to pounce upon little yarn mouse, bare fangs at toy run hide in litter box until treats are fed, for attack dog, run away and pretend to be victim. Make muffins my left donut is missing, as is my right unwrap toilet paper human is washing you why halp oh the horror flee scratch hiss bite. Cat is love, cat is life. Climb leg freak human out make funny noise mow mow mow mow mow mow success now attack human so decide to want nothing to do with my owner today. Scratch the furniture vommit food and eat it again but lick plastic bags for curl up and sleep on the freshly laundered towels. Meow to be let out cats secretly make all the worlds muffins so sit and stare, cat dog hate mouse eat string barf pillow no baths hate everything, so kitty kitty. Find a way to fit in tiny box pee in humans bed until he cleans the litter box eat and than sleep on your face.
     </string>
@@ -9,6 +8,7 @@
     <string name="menu_label_add_item">Add Item</string>
     <string name="menu_label_remove_item">Remove Item</string>
     <string name="menu_label_share_info">Share Information</string>
+    <string name="menu_label_about_me">About me</string>
 
     <string name="message_item_added">Item added successfully</string>
     <string name="message_item_deleted">Item deleted successfully</string>
@@ -19,5 +19,17 @@
     <string name="title_activity_splash">SplashActivity</string>
     <string name="title_activity_article_details">ArticleDetailsActivity</string>
 
+
+    <string name="about_me_label_name">Moises Gilberto Portillo</string>
+    <string name="about_me_label_career">Android Developer</string>
+    <string name="about_me_message_about">
+        Motivated for create and innovate, born the passion for Building Software. Longs days and night, try to learn a little bit more about development, read blogs, watch video tutorials, speak with other developers. My passion for the technology was always for curiosity and step by step become to in my real life.
+I love give the best of me, create opinions and different criteria, ideas, extra effort in all, try to use the latest in technology, give help to others persons that want to start like developers
+
+        \n \n
+        http://moisesportillo.com
+        \n
+        moises.gilberto@gmail.com
+    </string>
 
 </resources>

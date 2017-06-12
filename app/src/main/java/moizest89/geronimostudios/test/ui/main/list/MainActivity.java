@@ -3,6 +3,7 @@ package moizest89.geronimostudios.test.ui.main.list;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -100,6 +101,7 @@ public class MainActivity extends AppCompatActivity implements IMainView, MainAd
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_add_item, menu);
         getMenuInflater().inflate(R.menu.menu_remove_item, menu);
+        getMenuInflater().inflate(R.menu.menu_about_me, menu);
         return true;
     }
 
@@ -119,10 +121,14 @@ public class MainActivity extends AppCompatActivity implements IMainView, MainAd
         }else if(id == R.id.menu_remove_item){
             mAdapter.removeItemToList();
             return true;
+        }else if(id == R.id.menu_about_me){
+            showAboutMe();
+            return true;
         }
 
         return super.onOptionsItemSelected(item);
     }
+
 
     @Override
     protected void attachBaseContext(Context newBase) {
@@ -166,6 +172,10 @@ public class MainActivity extends AppCompatActivity implements IMainView, MainAd
         showSimpleMessage(R.string.message_item_deleted);
     }
 
+
+    private void showAboutMe(){
+        Utility.showAboutMeDialog(this);
+    }
 
     //Show toast message
     private void showSimpleMessage(int message){
