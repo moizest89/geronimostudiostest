@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Geronimo</string>
+
+    <string name="menu_label_about_me">Sur moi</string>
+    <string name="menu_label_add_item">Ajouter un item</string>
+    <string name="menu_label_remove_item">Retirer un item</string>
+    <string name="menu_label_share_info">Partager l\'information</string>
+
+    <string name="message_item_added">Élément ajouté avec succès</string>
+    <string name="message_item_deleted">Élément supprimé avec succès</string>
+    <string name="message_no_data_to_show">Il n\'y a pas information pour montrer</string>
+
+    <string name="item_button_label_share">PARTEGER</string>
+    <string name="item_button_label_details">Détails</string>
+
+
+    <string name="about_me_message_about">
+
+        Motivé pour créer et innover,
+        est né la passion pour le logiciel de construction.
+        Longs jours et nuit, essayez d\'apprendre un peu plus sur le développement,
+        lire des blogs, regarder des didacticiels vidéo, parler avec d\'autres développeurs.
+        Ma passion pour la technologie est toujours pour moi, la curiosité et pas à pas dans ma vie réelle.
+        J\'aime donner le meilleur de moi meme, créer des opinions et des critères différents,
+        des idées, des efforts supplémentaires pour tous, essayer d\'utiliser les dernières technologies,
+        aider d\'autres personnes qui souhaitent démarrer comme des développeurs
+
+
+        \n \n
+        http://moisesportillo.com
+        \n
+        moises.gilberto@gmail.com
+
+    </string>
+
+</resources>
