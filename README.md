@@ -17,9 +17,8 @@ Create a simple app with 2 buttons that insert and delete items into a list. Dat
 ![Screen_1](https://raw.githubusercontent.com/moizest89/geronimostudiostest/develop/screens/app_1.jpg)
 
 ##Extras
-
-* Splash View.
-* Article details.
+* [GitFlow](https://danielkummer.github.io/git-flow-cheatsheet/)
+* Extra views: Splash,Article details and Banner details
 * Callbacks when add or delete items.
 * Support to French, english and spanish.
 * Zoom image in Article Details.
