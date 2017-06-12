@@ -1,12 +1,14 @@
 package moizest89.geronimostudios.test.ui.main.details;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.Html;
 import android.transition.Transition;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -113,6 +115,7 @@ public class ArticleDetailsActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.menu_share_info) {
+            shareData();
             return true;
         }else if(id == R.id.menu_about_me){
             showAboutMe();
@@ -124,6 +127,17 @@ public class ArticleDetailsActivity extends AppCompatActivity {
 
     private void showAboutMe(){
         Utility.showAboutMeDialog(this);
+    }
+
+    private void shareData(){
+
+        Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
+        sharingIntent.setType("text/plain");
+
+        sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, this.article.getName());
+        sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, this.article.getDescription());
+
+        startActivity(Intent.createChooser(sharingIntent, "Share via"));
     }
 
 }
