@@ -10,7 +10,6 @@
     </style>
 
 
-
     <style name="AppTheme.NoActionBar">
 
         <item name="android:textColorHighlight">@color/colorAccent</item>

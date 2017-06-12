@@ -20,8 +20,10 @@ import com.squareup.picasso.Picasso;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import moizest89.geronimostudios.test.R;
 import moizest89.geronimostudios.test.data.models.Article;
+import moizest89.geronimostudios.test.ui.main.zoom_image.ZoomImageVIewActivity;
 import moizest89.geronimostudios.test.util.PabloPicasso;
 import moizest89.geronimostudios.test.util.Utility;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
@@ -77,6 +79,15 @@ public class ArticleDetailsActivity extends AppCompatActivity {
         }
 
     }
+
+
+    @OnClick(R.id.black_overlight)
+    public void showImageDetails(){
+        Bundle bundle = new Bundle();
+        bundle.putString(Utility.INTENT_DATA, this.article.getBanner());
+        Utility.changeActivity(ArticleDetailsActivity.this, ZoomImageVIewActivity.class, bundle, false);
+    }
+
 
     @Override
     protected void attachBaseContext(Context newBase) {
